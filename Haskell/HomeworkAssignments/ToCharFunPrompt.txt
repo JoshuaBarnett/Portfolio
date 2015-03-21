@@ -1,0 +1,8 @@
+In cryptography, one would like to apply functions defined over the
+type Int to data of type Char. However, in Haskell, these two types are distinct. In Haskell, write a
+function
+toCharFun :: (Int -> Int) -> (Char -> Char)
+that takes a function f, of type is Int -> Int, and returns a function that operates on characters. In your
+implementation you can use the fromEnum and toEnum functions that Haskell provides (found in the
+Enum instance that is built-in for the type Char).
+Hint: note that (fromEnum 'a') is 97 and (toEnum 100) :: Char is 'd'.

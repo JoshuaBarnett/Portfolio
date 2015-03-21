@@ -1,0 +1,21 @@
+Using:
+-- $Id: StatementsExpressions.hs,v 1.1 2015/02/12 04:23:12 leavens Exp leavens $
+module StatementsExpressions where
+data Statement = ExpStmt Expression
+| AssignStmt String Expression
+| IfStmt Expression Statement
+deriving (Eq, Show)
+data Expression = VarExp String
+| NumExp Integer
+| EqualsExp Expression Expression
+| BeginExp [Statement] Expression
+deriving (Eq, Show)
+
+Write a function
+improve :: Statement -> Statement
+that takes a Statement, stmt, and returns a Statement just like stmt, except that two simplifications are
+made:
+1. Each Statement of the form (IfStmt (VarExp "true") s) is replaced by a simplified version of s
+in the output.
+2. Each Expression of the form (BeginExp [] e) is replaced by a simplified version of e in the
+output.

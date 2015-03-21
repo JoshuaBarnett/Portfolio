@@ -1,0 +1,18 @@
+Write a function
+hep :: [Word] -> [Word]
+type Word = String
+that takes a list of words (i.e., Strings not containing blanks), txt, and returns a list just like txt but
+with the following substitutions made each time they appear as consecutive words in txt:
+• you is replaced by u,
+• are is replaced by r,
+• your is replaced by ur,
+• the three words by the way are replaced by the word btw,
+• the three words for your information is replaced by the word fyi,
+• boyfriend is replaced by bf,
+• girlfriend is replaced by gf,
+• the three words be right back are replaced by the word brb,
+• the three words laughing out loud are replaced by the word lol,
+• the two words see you are replaced by the word cya,
+• the two words I will are replaced by the word I’ll, and
+• great is replaced by gr8.
+This list is complete (for this problem).

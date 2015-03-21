@@ -1,0 +1,17 @@
+You are to complete the Matrix module by writing a function definition for each function declared in
+the module. To explain these, note that an m × n matrix is one with m rows and n columns. Element
+indexes range from 1 to the number of rows or columns (unlike the convention in C or Haskell). With
+that convention you are to implement the following functions:
+• fillWith takes a pair (m, n) and an element e and produces an m × n matrix each of whose
+elements are e.
+• fromRule takes a pair (m, n) and a function g (the rule), and produces an m × n matrix whose
+(i, j)th element is g(i, j).
+• numRows takes an m × n matrix and returns the number of rows in the matrix, m.
+• numColumns takes an m × n matrix and returns the number of columns in the matrix, n.
+• at takes an m × n matrix and a pair of Ints, (i, j), and returns the (i, j)th element of the matrix,
+provided that 1 ≤ i ≤ m and 1 ≤ j ≤ n. If either index is outside of those ranges, an error occurs
+(at runtime).
+• mtranspose takes an m × n matrix and returns an n × m matrix where the (i, j)th element of the
+result is the (j, i)th element of the argument matrix.
+• mmap takes an m × n matrix and a function f and returns an m × n matrix whose (i, j)th element
+is the result of applying f to the (i, j)th element of the argument matrix.

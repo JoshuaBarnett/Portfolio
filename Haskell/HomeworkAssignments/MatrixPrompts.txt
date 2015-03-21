@@ -15,3 +15,26 @@ provided that 1 ≤ i ≤ m and 1 ≤ j ≤ n. If either index is outside of tho
 result is the (j, i)th element of the argument matrix.
 • mmap takes an m × n matrix and a function f and returns an m × n matrix whose (i, j)th element
 is the result of applying f to the (i, j)th element of the argument matrix.
+
+
+MatrixAdd:
+ Complete the module definition in Figure 12 below, by defining the functions
+sameShape, pointwiseApply, add, and sub.
+-- $Id: MatrixAdd.hs,v 1.2 2015/02/12 04:23:12 leavens Exp leavens $
+module MatrixAdd where
+import Matrix
+import MatrixInstances
+sameShape :: (Matrix a) -> (Matrix a) -> Bool
+pointwiseApply :: (a -> a -> b) -> (Matrix a) -> (Matrix a) -> (Matrix b)
+add :: (Num a) => (Matrix a) -> (Matrix a) -> (Matrix a)
+sub :: (Num a) => (Matrix a) -> (Matrix a) -> (Matrix a)
+Figure 12: Beginning of the module MatrixAdd, for you to complete.
+The predicate sameShape takes arguments of type Matrix a and returns True when they have the same
+dimensions.
+The function pointwiseApply takes a curried function op of two arguments and two matricies, m1, and
+m2, which have the same shape and whose elements are the same type as the argument types of op, and
+returns a matrix of the same shape as m1 and m2, in which the (i,j)th element is
+(m1 `at` (i,j)) `op` (m2 `at` (i,j)). If the two matrices do not have the same shape, then an
+error should be raised (using Haskell’s error function).
+The add and sub operations are the usual pointwise addition and subtraction of matrices.
+You must define add and sub by using pointwiseApply.

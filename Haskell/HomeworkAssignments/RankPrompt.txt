@@ -1,0 +1,16 @@
+In various contests the contestants are awarded places based on some score,
+and a list of winners is produced. For example, ebird.org maintains lists of the top 100 birders in Florida
+this year. In such ranked lists, contestants that have the same score are considered tied; for example, if
+Audrey and Carlos have both seen 187 bird species this year, then they are considered tied, and both are
+listed as being in (say) 12th place. In this scenario, the next birder, with 186 species, is listed as being in
+14th place, as Audrey and Carlos take places 12 and 13 together, even though they are listed as tied for
+12th place.
+In this problem you will write an general ranking function
+rank :: (Ord a) => [a] -> [(Int, a)]
+which for any type a that is an instance of the Ord class, takes a list of elements of type a, things, and
+returns a list of pairs of Ints and a elements. The result is sorted (in non-decreasing order) on the a
+elements of things, and the Int in each pair is the rank of the element in the pair. There are test cases
+contained in the file RankTests.hs, which is shown in Figure 5 on the following page. To run our tests,
+use the RankTests.hs file. To make that work, you have to put your code in a module Rank.
+Hint: you can use sort from the module Data.List. You may also find it helpful to use a helping
+function so that you can have some additional variables, even if you are not using tail recursion.

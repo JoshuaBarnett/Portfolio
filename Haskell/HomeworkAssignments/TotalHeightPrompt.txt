@@ -1,0 +1,16 @@
+In Haskell, write a function
+totalHeight :: WindowLayout -> Int
+that takes a hWindowLayouti, wl, and returns the total height of the window layout. The height is
+defined by cases as follows. The height of a hWindowLayouti of form
+Window {wname = nm, width = w, height = h}
+is h. The height of a hWindowLayouti of the form
+Horizontal [wl1, . . ., wlm]
+is 0 if the list is empty, and otherwise is the maximum of the heights of wl1 through wlm (inclusive).
+The height of a hWindowLayouti of the form
+Vertical [wl1, . . ., wln]
+is the sum of the heights of wl1 through wlm (inclusive), which is 0 if the list is empty.
+The file TotalHeightTests.hs contains tests that show how the function should work, see Figure 1 on
+the following page.
+Be sure to follow the grammar! In particular, you need to use some helping function to work on the lists
+that are part of the hWindowLayouti grammar. We will take off points if you do not follow the grammar
+(and you will spend more time trying to get your code to work).

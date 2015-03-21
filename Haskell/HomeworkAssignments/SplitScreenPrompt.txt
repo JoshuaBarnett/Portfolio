@@ -1,0 +1,9 @@
+2. (20 points) [UseModels]
+This is another problem about Window Layouts. Write a function
+splitScreen :: String -> WindowLayout -> WindowLayout
+that takes a string, name, and a Window Layout, wl, and returns a Window Layout that is just like wl,
+except that for each window in wl whose wname is (== to) name is changed to a horizontal window layout
+with both windows having the same name and half the width of the previous layout. (Hint, use Haskell’s
+div operator to do the division.)
+Figure 2 on the next page shows examples.
+As always, after writing your code, run our tests, and turn in your solution and the output of our tests.

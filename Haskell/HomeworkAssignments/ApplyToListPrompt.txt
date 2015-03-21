@@ -1,0 +1,30 @@
+--PROMPT:
+
+] This problem will have you write two functions that deal with the application of binary
+relations to keys (i.e., the look up of the values associated with a given key). In this problem binary
+relations are represented as lists of pairs, as described in the file BinaryRelation.hs:
+-- $Id: BinaryRelation.hs,v 1.2 2015/01/21 20:31:14 leavens Exp leavens $
+module BinaryRelation where
+-- Binary relations are represented as lists of pairs
+type BinaryRelation a b = [(a,b)]
+In a BinaryRelation, the first part of a pair is called a “key” and the second part of a pair is called a
+“value.”
+Your code for the following two functions should go in a module named ApplyToList that imports the
+BinaryRelation module. Thus it should start as follows.
+module ApplyToList where
+import BinaryRelation
+The functions you are to write are the following.
+(a) (10 points) Using a list comprehension, write the function
+applyRel :: (Eq k) => k -> (BinaryRelation k v) -> [v]
+When given a key value, ky, of some equality type k, and a BinaryRelation pairs, of type
+(BinaryRelation k v) the result is a list of values (of type v) that are the values from all the pairs
+whose key is ky. Note that values in the result appear in the order in which they appear in pairs.
+(b) (10 points) Using recursion (that is, without using a list comprehension or library functions), write
+the function
+applyToList :: (Eq k) => [k] -> (BinaryRelation k v) -> [v]
+When given a list of keys, keys, of some equality type k, and a BinaryRelation, pairs, the result is
+a list of values from all the pairs in the relation pairs whose key is one of the keys in keys. Note
+that the order of the answer is such that all the values associated with the first key in keys appear
+before any of the values associated with a later key, and similarly the values associated with other
+keys appear before later keys in keys. (Hint: You may use applyRel in your solution for this
+problem.)

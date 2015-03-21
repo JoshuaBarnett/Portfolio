@@ -1,0 +1,31 @@
+A set can be described by a “characteristic function” (whose range
+is Bool) that determines if an element occurs in the set. For example, the function φ such that
+φ(”coke”) = φ(”pepsi”) = True and for all other arguments x, φ(x) = False is the characteristic
+function for a set containing the strings "coke" and "pepsi", but nothing else. Allowing the user to
+construct a set from a characteristic function gives one the power to construct sets that may “contain” an
+infinite number of elements (such as the set of all prime numbers).
+In a module named InfSet, you will declare a polymorphic type constructor Set, which can be declared
+something like as follows:
+type Set a = ...
+-- or perhaps something like --
+data Set a = ...
+Hint: think about using a function type as part of your representation of sets.
+Then fill in the operations of the module InfSet, which are described informally as follows.
+1. The function
+fromFunc :: (a -> Bool) -> (Set a)
+takes a characteristic function, f and returns a set such that each value x (of type a) is in the set
+just when fx is True.
+2. The function
+unionSet :: Set a -> Set a -> Set a
+takes two sets, with characteristic functions f and g, and returns a set such that each value x (of
+type a) is in the set just when either (fx) or (gx) is true.
+3. The function
+intersectSet :: Set a -> Set a -> Set a
+takes two sets, with characteristic functions f and g, and returns a set such that each value x (of
+type a) is in the set just when both (fx) and (gx) are true.
+4. The function
+inSet :: a -> Set a -> Bool
+tells whether the first argument is a member of the second argument.
+5. The function
+complementSet :: Set a -> Set a
+which returns a set that contains everything (of the appropriate type) not in the original set.
